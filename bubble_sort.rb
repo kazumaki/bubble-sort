@@ -18,16 +18,20 @@ def bubble_sort_by(arr)
   for i in 0..arr.length - 2 do
     for j in 1..arr.length - (i + 1) do
       if block_given?
-        arr[j - 1],arr[j] = arr[j],arr[j - 1] if yield(arr[j - 1], arr[j]).positive?
+        if yield(arr[j - 1], arr[j]).positive?
+          arr[j - 1],arr[j] = arr[j],arr[j - 1]
+        end
       else
-        arr[j - 1],arr[j] = arr[j],arr[j - 1] if arr[j - 1] > arr[j]
+        if arr[j - 1] > arr[j]
+          arr[j - 1],arr[j] = arr[j],arr[j - 1]
+        end 
       end
     end
   end
   p arr
 end
 
-word_list = %w['hi','hello','hey']
+word_list = %w[hi,hello,hey]
 bubble_sort_by(word_list) do |left, right|
   left.length - right.length
 end
