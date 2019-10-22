@@ -11,3 +11,25 @@ def bubble_sort arrToSort
   end
   arrToSort
 end
+
+
+def bubble_sort_by arr
+  for i in 0..arr.length-2 do
+    for j in 1..arr.length - (i+1) do
+      if block_given?
+        arr[j-1],arr[j] = arr[j],arr[j-1] if yield(arr[j-1], arr[j]) > 0
+      else
+        arr[j-1],arr[j] = arr[j],arr[j-1] if arr[j-1] > arr[j]
+      end
+    end
+  end
+  p arr
+end
+
+bubble_sort_by(['hi','hello','hey']) do |left, right|
+  left.length - right.length
+end
+
+p ['hi','hello','hey'].sort do |left, right|
+  left.length - right.length
+end
