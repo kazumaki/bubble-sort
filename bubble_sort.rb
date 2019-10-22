@@ -19,11 +19,11 @@ def bubble_sort_by(arr)
     for j in 1..arr.length - (i + 1) do
       if block_given?
         if yield(arr[j - 1], arr[j]).positive?
-          arr[j - 1],arr[j] = arr[j],arr[j - 1]
+          arr[j - 1], arr[j] = arr[j], arr[j - 1]
         end
       else
         if arr[j - 1] > arr[j]
-          arr[j - 1],arr[j] = arr[j],arr[j - 1]
+          arr[j - 1], arr[j] = arr[j], arr[j - 1]
         end 
       end
     end
