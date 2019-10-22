@@ -1,17 +1,17 @@
-def bubble_sort arrToSort
-  length = arrToSort.length
+# frozen_string_literal: true
+def bubble_sort (arr)
+  length = arr.length
   for i in 0..length-1 do
     for j in 0..length-i-2 do
-      if arrToSort[j] > arrToSort[j + 1]
-        carry = arrToSort[j+1]
-        arrToSort[j+1] = arrToSort[j]
-        arrToSort[j] = carry
+      if arr[j] > arr[j + 1]
+        carry = arrToSort[j+ 1]
+        arr[j + 1] = arr[j]
+        arr[j] = carry
       end
     end
   end
-  arrToSort
+  arr
 end
-
 
 def bubble_sort_by arr
   for i in 0..arr.length-2 do
