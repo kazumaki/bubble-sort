@@ -31,7 +31,7 @@ def bubble_sort_by(arr)
   p arr
 end
 
-word_list = %w[hi,hello,hey]
+word_list = %w[hi, hello, hey]
 bubble_sort_by(word_list) do |left, right|
   left.length - right.length
 end
