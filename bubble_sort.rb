@@ -4,7 +4,8 @@ def bubble_sort(arr)
   length = arr.length
   (0..length - 1).each do |i|
     (0..length - i - 2).each do |j|
-      next if arr[j] <= arr[j+1]
+      next if arr[j] <= arr[j + 1]
+      
       carry = arr[j + 1]
       arr[j + 1] = arr[j]
       arr[j] = carry
@@ -19,7 +20,7 @@ def bubble_sort_by(arr)
       if block_given?
         arr[j - 1], arr[j] = arr[j], arr[j - 1] if yield(arr[j - 1], arr[j]).positive?
       elsif arr[j - 1] > arr[j]
-          arr[j - 1], arr[j] = arr[j], arr[j - 1]
+        arr[j - 1], arr[j] = arr[j], arr[j - 1]
       end
     end
   end
