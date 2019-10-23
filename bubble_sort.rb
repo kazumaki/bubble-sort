@@ -5,7 +5,7 @@ def bubble_sort(arr)
   (0..length - 1).each do |i|
     (0..length - i - 2).each do |j|
       next if arr[j] <= arr[j + 1]
-      
+
       carry = arr[j + 1]
       arr[j + 1] = arr[j]
       arr[j] = carry
